@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<header>
+		<div class="container">
+			<a class="headline"> Co-Working Space</a>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-8">
+					<ul class="nav nav-pills nav-text">
+						<li class="left"> <%= link_to 'Top', root_path %></li>
+						<li> <%= link_to 'Logout', destroy_staff_session_path %></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<%= yield %>
+	</div>
+
+	<footer class="container text-center">
+		<div class="sitemap">
+	   	    <p class="text-white">@2018.co-working Space</p>
+   		</div>
+	</footer>
+  </body>
+</html>
+
+
+
