@@ -13,4 +13,5 @@ Rails.application.routes.draw do
  get '/access' => "sites#access", as: "access"
  get '/price' => "sites#price", as: "price"
  get '/qanda' => "sites#qanda", as: "qanda"
+ get '/staff_home' => "sites#staff_home", as: "staff_home"
 end

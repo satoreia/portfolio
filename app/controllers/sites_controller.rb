@@ -1,4 +1,5 @@
 class SitesController < ApplicationController
+
   def top
   end
 
@@ -12,5 +13,9 @@ class SitesController < ApplicationController
   end
 
   def qanda
+  end
+
+  def home
+    render :layout => nil
   end
 end
