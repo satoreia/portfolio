@@ -1,6 +1,8 @@
 
-<div class="top-visual">
-	<p class="top-visual-text"><strong> Come to my house whenever you like.</strong></p>
+<div class="row">
+	<div class="top-visual">
+		<p class="top-visual-text"><strong> Come to my house whenever you like.</strong></p>
+	</div>
 </div>
 
 <div class="row concept">
@@ -13,19 +15,25 @@
 </div>
 
 <div class="row">
-	<div class="col-md-4 col-md-offset-1 link-box link-box1">
+	<%= link_to(about_path) do %>
+	<div class="col-md-7 col-md-offset-1 link-box link-box1">
 		<p class="link-text"> About</p>
 	</div>
+	<% end %>
 </div>
 <div class="row">
-	<div class="col-md-4 col-md-offset-6 link-box link-box2">
+	<%= link_to(price_path) do %>
+	<div class="col-md-7 col-md-offset-4 link-box link-box2">
 		<p class="link-text"> Price</p>
 	</div>
+	<% end %>
 </div>
 <div class="row">
-	<div class="col-md-4 col-md-offset-1 link-box link-box3">
+	<%= link_to(qanda_path) do %>
+	<div class="col-md-7 col-md-offset-1 link-box link-box3">
 		<p class="link-text"> Q&A</p>
 	</div>
+	<% end %>
 </div>
 
 <div class="row">
@@ -48,7 +56,9 @@
 					</tr>
 				</tbody>
 			</table>
-			<a><span class="label label-success"> More..</span></a>
+			<%= link_to news_index_path do %>
+			<span class="label label-success"> More..</span>
+			<% end %>
 		</div>
 		<div class="col-md-5 col-md-offset-1">
 			<h2 class="title"> Staff Blog</h2>
@@ -72,7 +82,9 @@
 					</tr>
 				</tbody>
 			</table>
-			<a><span class="label label-success"> More..</span></a>
+			<%= link_to blogs_path do %>
+			<span class="label label-success"> More..</span>
+			<% end %>
 		</div>
 	</div>
 </div>
