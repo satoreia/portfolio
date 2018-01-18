@@ -1,4 +1,5 @@
 class SitesController < ApplicationController
+  before_action :authenticate_user!, only: [:home]
 
   def top
   end
@@ -15,7 +16,7 @@ class SitesController < ApplicationController
   def qanda
   end
 
-  def home
-    render :layout => nil
+  def staff_home
+
   end
 end
