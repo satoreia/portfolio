@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
-  before_action :authenticate_user!, only: [:home]
+  before_action :authenticate_staff!, only: [:staff_home]
 
   def top
   end

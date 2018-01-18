@@ -1,27 +1,36 @@
-<%= link_to 'Logout', destroy_staff_session_path, method: :delete %>
+
 <div class="row staffhome-visual">
 	<p class="staff-top-text"> Thank you for your ongoing support.</p>
 </div>
 
 <div class="row">
-	<div class="col-md-4 col-md-offset-1 link-box link-box1">
+	<%= link_to(blogs_path) do %>
+	<div class="col-md-7 col-md-offset-1 link-box link-box1">
 		<p class="link-text"> Staff Blog一覧</p>
 	</div>
+	<% end %>
 </div>
 <div class="row">
-	<div class="col-md-4 col-md-offset-6 link-box link-box2">
+	<%= link_to(new_blog_path) do %>
+	<div class="col-md-7 col-md-offset-4 link-box link-box2">
 		<p class="link-text"> Staff Blog投稿</p>
 	</div>
+	<% end %>
 </div>
 <div class="row">
-	<div class="col-md-4 col-md-offset-1 link-box link-box3">
+	<%= link_to(news_index_path) do %>
+	<div class="col-md-7 col-md-offset-1 link-box link-box3">
 		<p class="link-text"> News一覧</p>
 	</div>
+	<% end %>
 </div>
 <div class="row">
-	<div class="col-md-4 col-md-offset-6 link-box link-box2">
-		<p class="link-text"> News</p>
+	<%= link_to(new_news_path) do %>
+	<div class="col-md-7 col-md-offset-4 link-box link-box4 ">
+		<p class="link-text"> News投稿</p>
 	</div>
+	<% end %>
 </div>
+
 
 </div>
