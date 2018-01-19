@@ -6,11 +6,11 @@
 	<div class="col-md-8 col-md-offset-2">
 		<% @blogs.each do |blog| %>
 		<span><%= link_to blog.title, blog_path(blog.id) %></span>
+		<%= attachment_image_tag blog, :blog_image, :fill, 100, 100, format: 'jpeg' %>
 		<% end %>
 
 		</div>
 		<div class="col-md-2">
-			
 		</div>
 	</div>
 
