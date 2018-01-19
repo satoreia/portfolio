@@ -7,27 +7,9 @@
 
 <div class="row">
   <div class=" col-md-8 col-md-offset-2">
-   <table class="table">
-<!--        <thead>
-          <tr>
-            <th></th>
-          </tr>
-        </thead> -->
-        <tbody>
-         <tr>
-          <td> 2018年１月３日</td>
-          <td> title</td>
-        </tr>
-        <tr>
-          <td> 2018年１月３日</td>
-          <td> title</td>
-        </tr>
-        <tr>
-         <td> 2018年１月３日</td>
-         <td> title</td>
-       </tr>
-     </tbody>
-   </table>
+   <% @news.each do |news| %>
+    <span><%= link_to news.title, news_path(news.id) %></span>
+    <% end %>
  </div>
  <div class="col-md-2">
  </div>
