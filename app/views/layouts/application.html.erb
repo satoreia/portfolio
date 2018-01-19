@@ -12,11 +12,11 @@
   	<% if staff_signed_in? %>
 	  	<header>
 			<div class="container">
-				<a class="headline"> Co-Working Space</a>
+				<h1 class="headline"> Co-Working Space</h1>
 				<div class="row">
 					<div class="col-md-4 col-md-offset-8">
 						<ul class="nav nav-pills nav-text">
-							<li class="left"> <%= link_to 'Top', staff_home_path %></li>
+							<li class="left"> <%= link_to 'Staff Page Top', staff_home_path %></li>
 							<li> <%= link_to 'Logout', destroy_staff_session_path, method: :delete %></li>
 						</ul>
 					</div>
@@ -26,7 +26,7 @@
   	<% else %>
 	  	<header>
 			<div class="container">
-				<a class="headline"> Co-Working Space</a>
+				<p class="headline"> Co-Working Space</p>
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4">
 						<ul class="nav nav-pills nav-text">
