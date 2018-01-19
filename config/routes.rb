@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
- resources :blogs, only:[:edit,:index,:new,:show]
- resources :news, only:[:edit,:index,:new,:show]
+ resources :blogs
+ resources :news
 
  root "sites#top"
  get '/about' => "sites#about", as: "about"

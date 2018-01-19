@@ -13,13 +13,21 @@
 
 <div class="row">
 	<div class="col-md-8 col-md-offset-3">
-		<p> date</p>
-		<p> title</p>
-		<p> text</p>
-		<p> picture</p>
-		<p> contributor</p>
+		<%= form_for(@blog) do |f| %>
+			<p> Date</p>
+			<%= f.datetime_field :created_at %>
+			<p> Title</p>
+			<%= f.text_field :title %>
+			<p> Body</p>
+			<%= f.text_area :body %>
+			<p> Picture</p>
+			<!-- <%= f.text_field :title %> -->
+			<p> Contributor</p>
+			<%= f.text_field :contributor %>
+			<div class="col-md-2 col-md-offset-8">
+				<%= f.submit '投稿' %>
+			</div>
+		<% end %>
 	</div>
-	<div class="col-md-2 col-md-offset-8">
-		<p> 投稿する</p>
-	</div>
+
 </div>
