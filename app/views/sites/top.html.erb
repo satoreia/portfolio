@@ -40,15 +40,29 @@
 	<div class="back-image1">
 		<div class="col-md-5 col-md-offset-1">
 			<h2 class="title"> News</h2>
-			<% @news.each do |news| %>
-				<span><%= link_to news.title, news_path(news.id) %></span>
-			<% end %>
-			<%= link_to news_index_path do %>
-			<span class="btn btn-xs btn-success"> More..</span>
-			<% end %>
+			<table>
+				<tbody>
+					<% @news.each do |news| %>
+						<tr>
+							<td>
+								<%= news.created_at %>
+							</td>
+							<td>
+								<span><%= link_to news.title, news_path(news.id) %></span>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+
+			<div class="col-md-2 col-md-offset-7">
+				<%= link_to news_index_path do %>
+				<span class="btn btn-xs btn-success"> More..</span>
+				<% end %>
+			</div>
 		</div>
 
-		<div class="col-md-5 col-md-offset-1">
+		<div class="col-md-5">
 			<h2 class="title"> Staff Blog</h2>
 			<% @blogs.each do |blog| %>
 				<span><%= link_to blog.title, blog_path(blog.id) %></span>
