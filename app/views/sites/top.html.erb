@@ -40,36 +40,34 @@
 	<div class="back-image1">
 		<div class="col-md-5 col-md-offset-1">
 			<h2 class="title"> News</h2>
-			<table>
-				<tbody>
-					<% @news.each do |news| %>
-						<tr>
-							<td>
-								<%= news.created_at %>
-							</td>
-							<td>
-								<span><%= link_to news.title, news_path(news.id) %></span>
-							</td>
-						</tr>
-					<% end %>
-				</tbody>
-			</table>
+
+			<% @news.each do |news| %>
+				<%= news.created_at.strftime('%Y/%m/%d') %>　　
+				<span><%= link_to news.title, news_path(news.id) %></span>
+				<br>
+			<% end %>
 
 			<div class="col-md-2 col-md-offset-7">
 				<%= link_to news_index_path do %>
-				<span class="btn btn-xs btn-success"> More..</span>
+					<span class="btn btn-xs btn-success"> More..</span>
 				<% end %>
 			</div>
 		</div>
 
 		<div class="col-md-5">
 			<h2 class="title"> Staff Blog</h2>
+
 			<% @blogs.each do |blog| %>
+				<%= blog.created_at.strftime('%Y/%m/%d') %>　　
 				<span><%= link_to blog.title, blog_path(blog.id) %></span>
+				<br>
 			<% end %>
-			<%= link_to blogs_path do %>
-			<span class="btn btn-xs btn-success"> More..</span>
-			<% end %>
+
+			<div class="col-md-2 col-md-offset-7">
+				<%= link_to blogs_path do %>
+					<span class="btn btn-xs btn-success"> More..</span>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>
