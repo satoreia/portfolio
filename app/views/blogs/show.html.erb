@@ -22,10 +22,10 @@
 			<p><%= @blog.created_at.strftime('%Y/%m/%d') %>　　　<p>
 		</div>
 		<div class="text-center">
-			<%= attachment_image_tag @blog, :blog_image, :fill, 500, 300, format: 'jpeg' %>
+			<%= attachment_image_tag @blog, :blog_image, :fill, 506, 253, format: 'jpeg' %>
 		</div>
 		<div class="col-md-10 col-md-offset-1 top">
-			<%= @blog.body %>
+			<%= simple_format(h (@blog.body)) %>
 		</div>
 	</div>
 </div>

@@ -1,9 +1,6 @@
 <div class="row newsindex-visual">
 	<p class="about-visual-text"><strong> News</strong></p>
 </div>
-<div class="col-md-8 col-md-offset-2">
-	<p> Only staff can see this page.</p>
-</div>
 
 <div class="row concept">
 	<h2 class="title"> Newsを編集しましょう！</h2>
@@ -12,17 +9,39 @@
 </div>
 
 <div class="row">
-	<div class="col-md-8 col-md-offset-3">
-		<%= form_for(@new) do |f| %>
-			<p> Title</p>
-			<%= f.text_field :title %>
-			<p> Body</p>
-			<%= f.text_area :body %>
-			<p> Contributor</p>
-			<%= f.text_field :contributor %>
-			<div class="col-md-2 col-md-offset-8">
-				<%= f.submit '編集' %>
-			</div>
-		<% end %>
+	<div class="col-md-6 col-md-offset-3">
+		<div class="form-horizontal">
+			<%= form_for(@new) do |f| %>
+				<% if @new.errors.any? %>
+				    <div id="error_explanation" class="alert alert-danger">
+				    	<h style="color: red;">空白の欄があります。全て入力してください。</h>
+					    <ul>
+					      <% @new.errors.full_messages.each do |message| %>
+					        <li><%= message %></li>
+					      <% end %>
+					    </ul>
+				    </div>
+				<% end %>
+
+				<p class="field"> <b>Date</b><br>
+					投稿日は編集できません。
+				</p>
+				<div class="field">
+					<%= f.label :title %><br>
+					<%= f.text_field :title, :class => "form-control" %>
+				</div>
+				<div class="field">
+					<%= f.label :body %><br>
+					<%= f.text_area :body, rows:20, :class => "form-control" %>
+				</div>
+				<div class="field">
+					<%= f.label :contributor %><br>
+					<%= f.text_field :contributor %>
+				</div>
+				<div class="actions">
+					<%= f.submit '編集', class: "btn btn-success" %>
+				</div>
+			<% end %>
+		</div>
 	</div>
 </div>

@@ -13,8 +13,8 @@
 
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
-		<h3 class="col-md-12">
-			　　　<%= @new.title %>
+		<h3 class="col-md-10 col-md-offset-1">
+			<%= @new.title %>
 		</h3>
 		<div class="col-md-12">
 			<div class=" ub">
@@ -23,7 +23,7 @@
 			<p><%= @new.created_at.strftime('%Y/%m/%d') %>　　　<p>
 		</div>
 		<div class="col-md-10 col-md-offset-1">
-			<%= @new.body %>
+			<%= simple_format(h (@new.body)) %>
 		</div>
 	</div>
 </div>

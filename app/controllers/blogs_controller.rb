@@ -21,11 +21,11 @@ class BlogsController < ApplicationController
 
   def update
     @blog = Blog.find(params[:id])
-    @blog.update(blog_params)
-    if @blog.save
+    # @blog.update(blog_params)
+    if @blog.update(blog_params)
       redirect_to blog_path(@blog.id)
     else
-      redirect_to edit_blog_path(@blog.id)
+      render :template => "blogs/edit"
     end
   end
 

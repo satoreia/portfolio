@@ -21,11 +21,11 @@ class NewsController < ApplicationController
 
   def update
     @new = News.find(params[:id])
-    @new.update(new_params)
-    if @new.save
+    # @new.update(new_params)
+    if @new.update(new_params)
       redirect_to news_path(@new.id)
     else
-      redirect_to edit_news_path(@new.id)
+      render :template => "news/edit"
     end
   end
 
