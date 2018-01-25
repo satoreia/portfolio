@@ -21,7 +21,6 @@ class NewsController < ApplicationController
 
   def update
     @new = News.find(params[:id])
-    # @new.update(new_params)
     if @new.update(new_params)
       redirect_to news_path(@new.id)
     else
@@ -44,7 +43,7 @@ class NewsController < ApplicationController
   end
 
   private
-  def new_params
-    params.require(:news).permit(:creates_at, :updated_at, :title, :body, :contributor)
-  end
+    def new_params
+      params.require(:news).permit(:creates_at, :updated_at, :title, :body, :contributor)
+    end
 end

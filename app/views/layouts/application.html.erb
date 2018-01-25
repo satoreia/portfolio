@@ -49,22 +49,22 @@
 	<% if staff_signed_in? %>
 		<footer class="container text-center">
 			<div class="sitemap">
-	   	    <p class="text-white">Go To "<%= link_to "co-working Space", root_path %>"          @2018.co-working Space</p>
+	   	    	<p class="text-white">Go To "<%= link_to "co-working Space", root_path %>"          @2018.co-working Space</p>
 	   		</div>
 		</footer>
 	<% else %>
 		<footer class="container text-center">
 			<div class="sitemap">
-			<ul class="nav nav-pills sitemap-text">
-				<li> <%= link_to 'Home', root_path %></li>
-				<li> <%= link_to 'About', about_path %></li>
-				<li> <%= link_to 'Price', price_path %></li>
-				<li> <%= link_to 'Access', access_path %></li>
-				<li> <%= link_to 'Q&A', qanda_path %></li>
-				<li> <%= link_to 'Staff Blog', blogs_path %></li>
-				<li> <%= link_to 'News', news_index_path %></li>
-			</ul>
-	   	    <p class="text-white">@2018.co-working Space</p>
+				<ul class="nav nav-pills sitemap-text">
+					<li> <%= link_to 'Home', root_path %></li>
+					<li> <%= link_to 'About', about_path %></li>
+					<li> <%= link_to 'Price', price_path %></li>
+					<li> <%= link_to 'Access', access_path %></li>
+					<li> <%= link_to 'Q&A', qanda_path %></li>
+					<li> <%= link_to 'Staff Blog', blogs_path %></li>
+					<li> <%= link_to 'News', news_index_path %></li>
+				</ul>
+		   	    <p class="text-white">@2018.co-working Space</p>
 	   		</div>
 		</footer>
 	<% end %>
