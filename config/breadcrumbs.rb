@@ -3,7 +3,7 @@ crumb :root do
 end
 
 crumb :about do
-	link "About", about_path
+	link "About", aboutus_path
 	parent :root
 end
 

@@ -7,6 +7,7 @@ class SitesController < ApplicationController
   end
 
   def about
+    @abouts = About.all
   end
 
   def price
@@ -16,6 +17,7 @@ class SitesController < ApplicationController
   end
 
   def qanda
+    @questions = Question.all
   end
 
   def staff_home
