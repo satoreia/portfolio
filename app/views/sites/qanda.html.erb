@@ -1,27 +1,30 @@
 <% breadcrumb :qanda %>
-<div class="row questions-visual">
-	<p class="about-visual-text"><strong> Q & A</strong></p>
-</div>
-
-<div class="row concept">
-	<h2 class="title"> よくあるご質問</h2>
-</div>
-
-<div class="row">
-	<div class="col-md-8 col-md-offset-2">
-		<p> ◆入会や登録する必要はありますか？</p>
-		<p> いいえ。ご利用の際にフロントにてチェックインしていただくだけで、ご利用いただけます。<br>
-		お得なポイントカードもありますので、ご希望でしたらフロントのスタッフまでお申し付けください。</p>
+<div class="container post">
+	<div class="row questions-visual">
+		<p class="about-visual-text"><strong> Q & A</strong></p>
 	</div>
-	<div class="col-md-8 col-md-offset-2">
-		<p> ◆飲食の持ち込みはできますか？</p>
-		<p> はい。簡単な軽食やお飲み物などをお席までお持込みいただけます。<br>
-			ただし、匂いの出る食べ物やアルコール類のお持込みはご遠慮いただいております。<br>
-		また、飲み物については、コーヒー・エスプレッソ・ラテ・紅茶・ハーブティー・ジュース・ミネラルウォーターなど、フリードリンクのご用意があります。</p>
+
+	<div class="row concept">
+		<h2 class="title"> よくあるご質問</h2>
 	</div>
-	<div class="col-md-8 col-md-offset-2">
-		<p> ◆途中外出はできますか？</p>
-		<p> 基本的にはお断りさせていただいております。<br>
-		ただし、当店のポイントカードをお持ちのお客様は、ポイントカードをフロントに預けることで外出が可能です。</p>
+
+	<div class="row">
+		<div class ="col-md-8 col-md-offset-2">
+			<% @questions.each do |question| %>
+			<h3 class="col-md-12">
+				<%= question.question %>
+			</h3>
+
+			<% if staff_signed_in? %>
+				<div class="col-md-2"> <%= link_to '編集', edit_question_path(question.id) %> / <%=link_to '削除', question_path(question.id), method: 'delete', "data-confirm" => "本当に削除しますか？" %>
+				</div>
+			<% end %>
+
+			<div class="col-md-10">
+				<%= simple_format(h (question.answer)) %>
+			</div>
+
+			<% end %>
+		</div>
 	</div>
 </div>
