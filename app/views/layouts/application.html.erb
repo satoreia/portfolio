@@ -4,44 +4,75 @@
     <title>Portfolio</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'  %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="skippr.css">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  	<header>
-		<div class="container">
-			<a class="headline"> Co-Working Space</a>
-			<div class="nav-text">
-				<ul>
-					<li> <%= link_to 'Home', root_path %></li>
-					<li> <%= link_to 'About', about_path %></li>
-					<li> <%= link_to 'Price', price_path %></li>
-					<li> <%= link_to 'Access', access_path %></li>
-				</ul>
+  	<% if staff_signed_in? %>
+	  	<header>
+			<div class="container">
+				<h1 class="headline"> Co-Working Space</h1>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-8">
+						<ul class="nav nav-pills nav-text">
+							<li class="left"> <%= link_to 'Staff Page Top', staff_home_path %></li>
+							<li> <%= link_to 'Logout', destroy_staff_session_path, method: :delete %></li>
+						</ul>
+					</div>
+				</div>
 			</div>
-		</div>
-	</header>
+		</header>
+  	<% else %>
+	  	<header>
+			<div class="container">
+				<p class="headline"> Co-Working Space</p>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4">
+						<ul class="nav nav-pills nav-text">
+							<li class="left"> <%= link_to 'Home', root_path %></li>
+							<li> <%= link_to 'About', aboutus_path %></li>
+							<li> <%= link_to 'Price', price_path %></li>
+							<li> <%= link_to 'Access', access_path %></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+	<% end %>
 
 	<div class="container">
+		<%= breadcrumbs separator: " &rsaquo; " %>
 		<%= yield %>
 	</div>
 
-	<footer class="container text-center">
-		<div class="sitemap">
-			<ul class="sitemap-text">
-				<li> <%= link_to 'Home', root_path %></li>
-				<li> <%= link_to 'About', about_path %></li>
-				<li> <%= link_to 'Price', price_path %></li>
-				<li> <%= link_to 'Access', access_path %></li>
-				<li> <%= link_to 'Q & A', qanda_path %></li>
-				<li> <%= link_to 'Staff Blig', blogs_path %></li>
-				<li> <%= link_to 'News', news_index_path %></li>
-			</ul>
-		</div>
-   	  <p class="text-white">@2018.co-working Space</p>
-	</footer>
-
+	<% if staff_signed_in? %>
+		<footer class="container text-center">
+			<div class="sitemap">
+	   	    	<p class="text-white">Go To "<%= link_to "co-working Space", root_path %>" @2018.co-working Space</p>
+	   		</div>
+		</footer>
+	<% else %>
+		<footer class="container text-center">
+			<div class="sitemap">
+				<ul class="nav nav-pills sitemap-text">
+					<li> <%= link_to 'Home', root_path %></li>
+					<li> <%= link_to 'About', aboutus_path %></li>
+					<li> <%= link_to 'Price', price_path %></li>
+					<li> <%= link_to 'Access', access_path %></li>
+					<li> <%= link_to 'Q&A', qanda_path %></li>
+					<li> <%= link_to 'Staff Blog', blogs_path %></li>
+					<li> <%= link_to 'News', news_index_path %></li>
+				</ul>
+		   	    <p class="text-white">@2018.co-working Space</p>
+	   		</div>
+		</footer>
+	<% end %>
+	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/skippr.min.js"></script>
   </body>
 </html>
+
+
+

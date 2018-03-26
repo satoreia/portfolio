@@ -1,2 +1,35 @@
-<h1>News#show</h1>
-<p>Find me in app/views/news/show.html.erb</p>
+<% breadcrumb :news %>
+
+<div class="row newsindex-visual">
+	<p class="about-visual-text"><strong> News</strong></p>
+</div>
+
+<% if staff_signed_in? %>
+	<div class="col-md-2 col-md-offset-8">
+		<p> <%= link_to '編集', edit_news_path(@new.id) %> / <%=link_to '削除', news_path, method: 'delete', "data-confirm" => "本当に削除しますか？" %></p>
+		<p>投稿者：<%= @new.contributor %></p>
+	</div>
+<% end %>
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<h3 class="col-md-10 col-md-offset-1">
+			<%= @new.title %>
+		</h3>
+		<div class="col-md-12">
+			<div class=" ub"></div>
+		</div>
+		<div class="text-right">
+			<p><%= @new.created_at.strftime('%Y/%m/%d') %>　　　<p>
+		</div>
+		<div class="col-md-10 col-md-offset-1">
+			<%= simple_format(h (@new.body)) %>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-2 col-md-offset-8 top">
+		<%= link_to '一覧へ戻る', news_index_path %>
+	</div>
+</div>

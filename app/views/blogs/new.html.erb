@@ -1,2 +1,53 @@
-<h1>Blogs#new</h1>
-<p>Find me in app/views/blogs/new.html.erb</p>
+<div class="row blogindex-visual">
+	<p class="about-visual-text"><strong> Staff Blog</strong></p>
+</div>
+
+<div class="row concept">
+	<h2 class="title"> Blogを投稿しましょう！</h2>
+	<p class="concept-text">
+	☆必ず画像を入れてください。</p>
+</div>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="form-horizontal">
+			<%= form_for(@blog) do |f| %>
+				<% if @blog.errors.any? %>
+				    <div id="error_explanation" class="alert alert-danger">
+				    	<h style="color: red;">空白の欄があります。全て入力してください。</h>
+					    <ul>
+					      <% @blog.errors.full_messages.each do |message| %>
+					        <li><%= message %></li>
+					      <% end %>
+					    </ul>
+				    </div>
+				<% end %>
+
+				<p class="field"> <b>Date</b><br>
+					投稿した日が表示されます。
+				</p>
+
+				<div class="field">
+					<%= f.label :title %><br>
+					<%= f.text_field :title, :class => "form-control" %>
+				</div>
+				<div class="field">
+					<%= f.label :body %><br>
+					<%= f.text_area :body, rows:20, :class => "form-control" %>
+				</div>
+				<div class="field">
+					<%= f.label :Picture %><br>
+					<%= f.attachment_field :blog_image%>
+				</div>
+				<div class="field">
+					<%= f.label :contributor %><br>
+					<%= f.text_field :contributor %>
+				</div>
+				<div class="actions">
+					<%= f.submit '投稿', class: "btn btn-success" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+
+</div>

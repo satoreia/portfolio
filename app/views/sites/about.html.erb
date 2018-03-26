@@ -1,2 +1,29 @@
-<h1>Sites#about</h1>
-<p>Find me in app/views/sites/about.html.erb</p>
+<% breadcrumb :about %>
+<div class="container post">
+	<div class="row about-visual">
+		<p class="about-visual-text"><strong> About</strong></p>
+	</div>
+
+
+
+	<div class="row">
+		<div class ="col-md-8 col-md-offset-2">
+			<% @abouts.each do |about| %>
+			<h3 class="col-md-12">
+				<%= about.title %>
+			</h3>
+
+			<% if staff_signed_in? %>
+				<div class="col-md-2"> <%= link_to '編集', edit_about_path(about.id) %> / <%=link_to '削除', about_path(about.id), method: 'delete', "data-confirm" => "本当に削除しますか？" %>
+				</div>
+			<% end %>
+
+			<div class="col-md-10">
+				<%= simple_format(h (about.body)) %>
+			</div>
+
+			<% end %>
+		</div>
+	</div>
+
+</div>

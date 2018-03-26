@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<header>
+		<div class="container">
+			<p class="headline"> Co-Working Space</p>
+	</header>
+
+	<div class="container">
+		<%= yield %>
+	</div>
+
+	<footer class="container text-center">
+		<div class="sitemap">
+	   	    <p class="text-white">Go To "<%= link_to "co-working Space HP", root_path %>"          @2018.co-working Space</p>
+   		</div>
+	</footer>
+  </body>
+</html>
+
+
+

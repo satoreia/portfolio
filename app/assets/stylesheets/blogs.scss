@@ -1,3 +1,25 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*blog-index.html*/
+.blogindex-visual {
+	width: 100%;
+	height: 250px;
+	margin-bottom: 30px;
+	background-image: url(pictures/pexels-photo-414645.jpeg);
+	background-size: 70% 100%;
+	background-position: center;
+}
+
+
+/*blog-show.html*/
+.image {
+	width: 70%;
+	height: 200px;
+	margin-bottom: 30px;
+	background-image: url(pictures/pexels-photo-706143.jpeg);
+	background-size: 70% 100%;
+	background-position: center;
+}
