@@ -1,77 +1,73 @@
-
-<div class="row">
+<section>
 	<div class="top-visual">
 		<p class="top-visual-text"><strong> Come to my house whenever you like.</strong></p>
 	</div>
-</div>
+</section>
 
-<div class="row concept">
+<section class="concept">
 	<h2 class="title"> Concept</h2>
 	<p class="concept-text">
-		カフェのような、図書館のようなオープンスペース。 <br>
-		作業に必要な電源やWifiも全席完備。 <br>
+			カフェのような、図書館のようなオープンスペース。 <br>
+			作業に必要な電源やWifiも全席完備。 <br>
+	</p>
+</section>
 
-</div>
-
-<div class="row">
+<section>
 	<%= link_to(aboutus_path) do %>
-		<div class="col-md-7 col-md-offset-1 link-box link-box1">
-			<p class="link-text"> About</p>
-		</div>
+	<div class="col-md-7 col-md-offset-1 link-box link-box1">
+		<p class="link-text"> About</p>
+	</div>
 	<% end %>
-</div>
-<div class="row">
+
 	<%= link_to(price_path) do %>
-		<div class="col-md-7 col-md-offset-4 link-box link-box2">
-			<p class="link-text"> Price</p>
-		</div>
+	<div class="col-md-7 col-md-offset-4 link-box link-box2">
+		<p class="link-text"> Price</p>
+	</div>
 	<% end %>
-</div>
-<div class="row">
+
+
 	<%= link_to(qanda_path) do %>
-		<div class="col-md-7 col-md-offset-1 link-box link-box3">
-			<p class="link-text"> Q&A</p>
-		</div>
+	<div class="col-md-7 col-md-offset-1 link-box link-box3">
+		<p class="link-text"> Q&A</p>
+	</div>
 	<% end %>
-</div>
+</section>
 
-<div class="row">
-	<div class="back-image1">
-		<div class="col-md-5 col-md-offset-1">
-			<h2 class="title"> News</h2>
+<section class="row">
+	<div class="col-md-5 col-md-offset-1">
+		<h2 class="title"> News</h2>
 
-			<% @news.each do |news| %>
-				<%= news.created_at.strftime('%Y/%m/%d') %>　　
-				<span><%= link_to news.title, news_path(news.id) %></span>
-				<br>
+		<% @news.each do |news| %>
+		<%= news.created_at.strftime('%Y/%m/%d') %>　　
+		<span><%= link_to news.title, news_path(news.id) %></span>
+		<br>
+		<% end %>
+
+		<div class="col-md-2 col-md-offset-7">
+			<%= link_to news_index_path do %>
+			<span class="btn btn-xs btn-success"> More..</span>
 			<% end %>
-
-			<div class="col-md-2 col-md-offset-7">
-				<%= link_to news_index_path do %>
-					<span class="btn btn-xs btn-success"> More..</span>
-				<% end %>
-			</div>
-		</div>
-
-		<div class="col-md-5">
-			<h2 class="title"> Staff Blog</h2>
-
-			<% @blogs.each do |blog| %>
-				<%= blog.created_at.strftime('%Y/%m/%d') %>　　
-				<span><%= link_to blog.title, blog_path(blog.id) %></span>
-				<br>
-			<% end %>
-
-			<div class="col-md-2 col-md-offset-7">
-				<%= link_to blogs_path do %>
-					<span class="btn btn-xs btn-success"> More..</span>
-				<% end %>
-			</div>
 		</div>
 	</div>
-</div>
 
-<div class="row">
+	<div class="col-md-5">
+		<h2 class="title"> Staff Blog</h2>
+
+		<% @blogs.each do |blog| %>
+		<%= blog.created_at.strftime('%Y/%m/%d') %>　　
+		<span><%= link_to blog.title, blog_path(blog.id) %></span>
+		<br>
+		<% end %>
+
+		<div class="col-md-2 col-md-offset-7">
+			<%= link_to blogs_path do %>
+			<span class="btn btn-xs btn-success"> More..</span>
+			<% end %>
+		</div>
+	</div>
+</section>
+
+<section class="row">
 	<%= render 'sites/access' %>
-</div>
+</section>
 
