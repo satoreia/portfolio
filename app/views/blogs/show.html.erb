@@ -1,8 +1,9 @@
-<% breadcrumb :blog %>
-
 <div class="row blogindex-visual">
 	<p class="about-visual-text"><strong> Staff Blog</strong></p>
 </div>
+
+<% breadcrumb :blog %>
+<%= render partial:'layouts/breadcrumb' %>
 
 <% if staff_signed_in? %>
 	<div class="col-md-2 col-md-offset-8">

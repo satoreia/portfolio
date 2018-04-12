@@ -1,4 +1,8 @@
-<% breadcrumb :access %>
 <div class="row">
+	<div class="col-md-5 col-md-offset-1">
+		<% breadcrumb :access %>
+		<%= render partial:'layouts/breadcrumb' %>
+	</div>
+
 	<%= render 'sites/access' %>
 </div>
