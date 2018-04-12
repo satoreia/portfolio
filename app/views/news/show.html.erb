@@ -1,8 +1,9 @@
-<% breadcrumb :news %>
-
 <div class="row newsindex-visual">
 	<p class="about-visual-text"><strong> News</strong></p>
 </div>
+
+<% breadcrumb :news %>
+<%= render partial:'layouts/breadcrumb' %>
 
 <% if staff_signed_in? %>
 	<div class="col-md-2 col-md-offset-8">
